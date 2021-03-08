@@ -12,6 +12,7 @@ namespace ConsoleApp6
     {
         private  TerminalDetails terminalDetails = new TerminalDetails();
 
+        //Check internet connection 
         public bool CheckForInternetConnection()
         {
             try
@@ -25,6 +26,7 @@ namespace ConsoleApp6
                 return false;
             }
         }
+       //Get Processor Information
         public List<ProcessorInfo> GetProcessorInfos() {
             //processor info
             ProcessorInfo processor = new ProcessorInfo();
@@ -40,6 +42,7 @@ namespace ConsoleApp6
             }
             return processors;
         }
+        //Get Hard Drive List
         public List<HardDriveInfo> GetHardDriveInfos()
         {
             List<HardDriveInfo> hardDriveInfos = new List<HardDriveInfo>();
@@ -55,6 +58,7 @@ namespace ConsoleApp6
             }
             return hardDriveInfos;
         } 
+        //Get windows version
         public string GetWindowsVersion()
         {
             string winvar = "";
@@ -69,6 +73,7 @@ namespace ConsoleApp6
             }
             return winvar;
         }
+        // get mother board id
         public string GetmotherboardId()
         {
             ManagementObjectSearcher moss = new ManagementObjectSearcher("SELECT * FROM Win32_BaseBoard");
@@ -80,6 +85,7 @@ namespace ConsoleApp6
             }
             return motherBoard;
         }
+       //Get Disk volume 
         public List<volumeDetails> GetVolumeDetails()
         {
             List<volumeDetails> dlist = new List<volumeDetails>();
@@ -104,6 +110,7 @@ namespace ConsoleApp6
             }
             return dlist;
         }
+        // Get networking Interface Information
         public List<NetInterfaceDetails> GetNetworkInfo()
         {
             List<NetInterfaceDetails> listNetInterface = new List<NetInterfaceDetails>();
@@ -133,6 +140,7 @@ namespace ConsoleApp6
             }
             return listNetInterface;
         }
+       //Get totall all information
         public  TerminalDetails GetFullTerminalInfo()
         {
             terminalDetails.PcName = Environment.MachineName.ToString();
